@@ -1420,95 +1420,154 @@ function v(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Obje
 //# sourceMappingURL=index.esm.runtime.min.js.map
 
 ;// CONCATENATED MODULE: ./src/B.ts
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+function B_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function B_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function B_createClass(Constructor, protoProps, staticProps) { if (protoProps) B_defineProperties(Constructor.prototype, protoProps); if (staticProps) B_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function B_typeof(obj) { "@babel/helpers - typeof"; return B_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, B_typeof(obj); }
+
+var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : B_typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+
+var __metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : B_typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
-let B = class B {
-    logB(msg) {
-        console.log("from logB => ", msg);
+
+
+var B = /*#__PURE__*/function () {
+  function B() {
+    B_classCallCheck(this, B);
+  }
+
+  B_createClass(B, [{
+    key: "logB",
+    value: function logB(msg) {
+      console.log("from logB => ", msg);
     }
-};
-__decorate([
-    d(m(() => A_A)),
-    __metadata("design:type", A_A)
-], B.prototype, "a", void 0);
-B = __decorate([
-    P()
-], B);
+  }]);
 
+  return B;
+}();
+
+__decorate([d(m(function () {
+  return A_A;
+})), __metadata("design:type", A_A)], B.prototype, "a", void 0);
+
+B = __decorate([P()], B);
 
 ;// CONCATENATED MODULE: ./src/A.ts
-var A_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+function A_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function A_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function A_createClass(Constructor, protoProps, staticProps) { if (protoProps) A_defineProperties(Constructor.prototype, protoProps); if (staticProps) A_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function A_typeof(obj) { "@babel/helpers - typeof"; return A_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, A_typeof(obj); }
+
+var A_decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : A_typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var A_metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+
+var A_metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : A_typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
-let A_A = class A {
-    logA(msg) {
-        console.log("from logA => ", msg);
+
+
+var A_A = /*#__PURE__*/function () {
+  function A() {
+    A_classCallCheck(this, A);
+  }
+
+  A_createClass(A, [{
+    key: "logA",
+    value: function logA(msg) {
+      console.log("from logA => ", msg);
     }
-};
-A_decorate([
-    d(m(() => B)),
-    A_metadata("design:type", B)
-], A_A.prototype, "b", void 0);
-A_A = A_decorate([
-    P()
-], A_A);
+  }]);
 
+  return A;
+}();
+
+A_decorate([d(m(function () {
+  return B;
+})), A_metadata("design:type", B)], A_A.prototype, "b", void 0);
+
+A_A = A_decorate([P()], A_A);
 
 ;// CONCATENATED MODULE: ./src/index.ts
-var src_decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
+function src_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function src_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function src_createClass(Constructor, protoProps, staticProps) { if (protoProps) src_defineProperties(Constructor.prototype, protoProps); if (staticProps) src_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function src_typeof(obj) { "@babel/helpers - typeof"; return src_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, src_typeof(obj); }
+
+var src_decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
+  var c = arguments.length,
+      r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
+      d;
+  if ((typeof Reflect === "undefined" ? "undefined" : src_typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
+    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  }
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var src_metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+
+var src_metadata = undefined && undefined.__metadata || function (k, v) {
+  if ((typeof Reflect === "undefined" ? "undefined" : src_typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
 
 
-let MyMath = class MyMath {
-    add(a, b) {
-        const sum = a + b;
-        this.a.logA(sum);
-        this.b.logB(sum);
-        return a + b;
+
+
+var MyMath = /*#__PURE__*/function () {
+  function MyMath() {
+    src_classCallCheck(this, MyMath);
+  }
+
+  src_createClass(MyMath, [{
+    key: "add",
+    value: function add(a, b) {
+      var sum = a + b;
+      this.a.logA(sum);
+      this.b.logB(sum);
+      return a + b;
     }
-};
-src_decorate([
-    d(A_A),
-    src_metadata("design:type", A_A)
-], MyMath.prototype, "a", void 0);
-src_decorate([
-    d(B),
-    src_metadata("design:type", B)
-], MyMath.prototype, "b", void 0);
-MyMath = src_decorate([
-    P()
-], MyMath);
-const injector = new k();
-const myMath = injector.get(MyMath);
-const sum = myMath.add(1, 2);
-console.log("sum => ", sum);
+  }]);
 
+  return MyMath;
+}();
+
+src_decorate([d(A_A), src_metadata("design:type", A_A)], MyMath.prototype, "a", void 0);
+
+src_decorate([d(B), src_metadata("design:type", B)], MyMath.prototype, "b", void 0);
+
+MyMath = src_decorate([P()], MyMath);
+var injector = new k();
+var myMath = injector.get(MyMath);
+var sum = myMath.add(1, 2);
+console.log("sum => ", sum);
 })();
 
 /******/ })()
