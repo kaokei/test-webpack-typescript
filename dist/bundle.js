@@ -1431,21 +1431,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var B = /** @class */ (function () {
-    function B() {
-    }
-    B.prototype.logB = function (msg) {
+let B = class B {
+    a;
+    logB(msg) {
         console.log("from logB => ", msg);
-    };
-    __decorate([
-        d(m(function () { return A_A; })),
-        __metadata("design:type", A_A)
-    ], B.prototype, "a", void 0);
-    B = __decorate([
-        P()
-    ], B);
-    return B;
-}());
+    }
+};
+__decorate([
+    d(m(() => A_A)),
+    __metadata("design:type", A_A)
+], B.prototype, "a", void 0);
+B = __decorate([
+    P()
+], B);
 
 
 ;// CONCATENATED MODULE: ./src/A.ts
@@ -1460,21 +1458,19 @@ var A_metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-var A_A = /** @class */ (function () {
-    function A() {
-    }
-    A.prototype.logA = function (msg) {
+let A_A = class A {
+    b;
+    logA(msg) {
         console.log("from logA => ", msg);
-    };
-    A_decorate([
-        d(m(function () { return B; })),
-        A_metadata("design:type", B)
-    ], A.prototype, "b", void 0);
-    A = A_decorate([
-        P()
-    ], A);
-    return A;
-}());
+    }
+};
+A_decorate([
+    d(m(() => B)),
+    A_metadata("design:type", B)
+], A_A.prototype, "b", void 0);
+A_A = A_decorate([
+    P()
+], A_A);
 
 
 ;// CONCATENATED MODULE: ./src/index.ts
@@ -1491,31 +1487,30 @@ var src_metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var MyMath = /** @class */ (function () {
-    function MyMath() {
-    }
-    MyMath.prototype.add = function (a, b) {
-        var sum = a + b;
+let MyMath = class MyMath {
+    a;
+    b;
+    add(a, b) {
+        const sum = a + b;
         this.a.logA(sum);
         this.b.logB(sum);
         return a + b;
-    };
-    src_decorate([
-        d(A_A),
-        src_metadata("design:type", A_A)
-    ], MyMath.prototype, "a", void 0);
-    src_decorate([
-        d(B),
-        src_metadata("design:type", B)
-    ], MyMath.prototype, "b", void 0);
-    MyMath = src_decorate([
-        P()
-    ], MyMath);
-    return MyMath;
-}());
-var injector = new k();
-var myMath = injector.get(MyMath);
-var sum = myMath.add(1, 2);
+    }
+};
+src_decorate([
+    d(A_A),
+    src_metadata("design:type", A_A)
+], MyMath.prototype, "a", void 0);
+src_decorate([
+    d(B),
+    src_metadata("design:type", B)
+], MyMath.prototype, "b", void 0);
+MyMath = src_decorate([
+    P()
+], MyMath);
+const injector = new k();
+const myMath = injector.get(MyMath);
+const sum = myMath.add(1, 2);
 console.log("sum => ", sum);
 
 })();
