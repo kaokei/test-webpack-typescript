@@ -1,94 +1,10 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/******/ (function() { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
-/* WEBPACK VAR INJECTION */(function(process, global) {/*! *****************************************************************************
+/***/ 660:
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+/*! *****************************************************************************
 Copyright (C) Microsoft. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -107,7 +23,7 @@ var Reflect;
     // Metadata Proposal
     // https://rbuckton.github.io/reflect-metadata/
     (function (factory) {
-        var root = typeof global === "object" ? global :
+        var root = typeof __webpack_require__.g === "object" ? __webpack_require__.g :
             typeof self === "object" ? self :
                 typeof this === "object" ? this :
                     Function("return this;")();
@@ -1220,236 +1136,57 @@ var Reflect;
     });
 })(Reflect || (Reflect = {}));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1), __webpack_require__(2)))
 
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
+/***/ })
 
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout () {
-    throw new Error('clearTimeout has not been defined');
-}
-(function () {
-    try {
-        if (typeof setTimeout === 'function') {
-            cachedSetTimeout = setTimeout;
-        } else {
-            cachedSetTimeout = defaultSetTimout;
-        }
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') {
-            cachedClearTimeout = clearTimeout;
-        } else {
-            cachedClearTimeout = defaultClearTimeout;
-        }
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-} ())
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) {
-        //normal enviroments in sane situations
-        return setTimeout(fun, 0);
-    }
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch(e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch(e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-
-
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) {
-        //normal enviroments in sane situations
-        return clearTimeout(marker);
-    }
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e){
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e){
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-
-
-
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) {
-        return;
-    }
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        runTimeout(drainQueue);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/global */
+/******/ 	!function() {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+!function() {
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/reflect-metadata/Reflect.js
-var reflect_metadata_Reflect = __webpack_require__(0);
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
+var reflect_metadata_Reflect = __webpack_require__(660);
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js
 function _setPrototypeOf(o, p) {
   _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
@@ -1458,7 +1195,7 @@ function _setPrototypeOf(o, p) {
 
   return _setPrototypeOf(o, p);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/isNativeReflectConstruct.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/isNativeReflectConstruct.js
 function _isNativeReflectConstruct() {
   if (typeof Reflect === "undefined" || !Reflect.construct) return false;
   if (Reflect.construct.sham) return false;
@@ -1471,14 +1208,14 @@ function _isNativeReflectConstruct() {
     return false;
   }
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/construct.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/construct.js
 
 
-function construct_construct(Parent, args, Class) {
+function _construct(Parent, args, Class) {
   if (_isNativeReflectConstruct()) {
-    construct_construct = Reflect.construct;
+    _construct = Reflect.construct;
   } else {
-    construct_construct = function _construct(Parent, args, Class) {
+    _construct = function _construct(Parent, args, Class) {
       var a = [null];
       a.push.apply(a, args);
       var Constructor = Function.bind.apply(Parent, a);
@@ -1488,9 +1225,9 @@ function construct_construct(Parent, args, Class) {
     };
   }
 
-  return construct_construct.apply(null, arguments);
+  return _construct.apply(null, arguments);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length) len = arr.length;
 
@@ -1500,16 +1237,16 @@ function _arrayLikeToArray(arr, len) {
 
   return arr2;
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
 
 function _arrayWithoutHoles(arr) {
   if (Array.isArray(arr)) return _arrayLikeToArray(arr);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js
 function _iterableToArray(iter) {
   if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
 
 function _unsupportedIterableToArray(o, minLen) {
   if (!o) return;
@@ -1519,11 +1256,11 @@ function _unsupportedIterableToArray(o, minLen) {
   if (n === "Map" || n === "Set") return Array.from(o);
   if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js
 
 
 
@@ -1531,7 +1268,7 @@ function _nonIterableSpread() {
 function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
@@ -1550,13 +1287,13 @@ function _createClass(Constructor, protoProps, staticProps) {
   });
   return Constructor;
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -1564,7 +1301,7 @@ function _assertThisInitialized(self) {
 
   return self;
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -1583,7 +1320,7 @@ function _inherits(subClass, superClass) {
   });
   if (superClass) _setPrototypeOf(subClass, superClass);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
@@ -1593,7 +1330,7 @@ function _typeof(obj) {
     return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
   }, _typeof(obj);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
 
 
 function _possibleConstructorReturn(self, call) {
@@ -1605,26 +1342,26 @@ function _possibleConstructorReturn(self, call) {
 
   return _assertThisInitialized(self);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
 function _getPrototypeOf(o) {
   _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
     return o.__proto__ || Object.getPrototypeOf(o);
   };
   return _getPrototypeOf(o);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/isNativeFunction.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/isNativeFunction.js
 function _isNativeFunction(fn) {
   return Function.toString.call(fn).indexOf("[native code]") !== -1;
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js
 
 
 
 
-function wrapNativeSuper_wrapNativeSuper(Class) {
+function _wrapNativeSuper(Class) {
   var _cache = typeof Map === "function" ? new Map() : undefined;
 
-  wrapNativeSuper_wrapNativeSuper = function _wrapNativeSuper(Class) {
+  _wrapNativeSuper = function _wrapNativeSuper(Class) {
     if (Class === null || !_isNativeFunction(Class)) return Class;
 
     if (typeof Class !== "function") {
@@ -1638,7 +1375,7 @@ function wrapNativeSuper_wrapNativeSuper(Class) {
     }
 
     function Wrapper() {
-      return construct_construct(Class, arguments, _getPrototypeOf(this).constructor);
+      return _construct(Class, arguments, _getPrototypeOf(this).constructor);
     }
 
     Wrapper.prototype = Object.create(Class.prototype, {
@@ -1652,9 +1389,9 @@ function wrapNativeSuper_wrapNativeSuper(Class) {
     return _setPrototypeOf(Wrapper, Class);
   };
 
-  return wrapNativeSuper_wrapNativeSuper(Class);
+  return _wrapNativeSuper(Class);
 }
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -1669,8 +1406,8 @@ function _defineProperty(obj, key, value) {
 
   return obj;
 }
-// CONCATENATED MODULE: ./node_modules/@kaokei/di/dist/index.esm.runtime.min.js
-function index_esm_runtime_min_v(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,i)}return r}function f(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?index_esm_runtime_min_v(Object(r),!0).forEach((function(t){_defineProperty(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):index_esm_runtime_min_v(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function l(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}
+;// CONCATENATED MODULE: ./node_modules/@kaokei/di/dist/index.esm.runtime.min.js
+function v(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);t&&(i=i.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,i)}return r}function f(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?v(Object(r),!0).forEach((function(t){_defineProperty(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):v(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function l(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}
 /**
  * @kaokei/di
  * Tiny di library depend on typescript and reflect-metadata
@@ -1679,172 +1416,117 @@ function index_esm_runtime_min_v(e,t){var r=Object.keys(e);if(Object.getOwnPrope
  * @author kaokei
  * @license MIT
  * @link https://github.com/kaokei/di
- */();return function(){var r,i=_getPrototypeOf(e);if(t){var n=_getPrototypeOf(this).constructor;r=Reflect.construct(i,arguments,n)}else r=i.apply(this,arguments);return _possibleConstructorReturn(this,r)}}var p={DESIGN_PROPERTY_TYPE:"design:type",DESIGN_PARAM_TYPES:"design:paramtypes",SERVICE_PARAM_TYPES:"service:paramtypes",SERVICE_INJECTED_PARAMS:"service:injected:params",SERVICE_INJECTED_PROPS:"service:injected:props",INJECT:Symbol("inject"),INJECTABLE:Symbol("injectable"),SELF:"self",SKIP_SELF:"skip",OPTIONAL:"optional"},E={INITING:Symbol("initing"),CONSTRUCTED:Symbol("constructed"),MERGED:Symbol("merged")};function h(e,t){return function(r){return function(i,n,o){var a="number"==typeof o,s=a?i:i.constructor,u=a?o:n,c=a?p.SERVICE_INJECTED_PARAMS:p.SERVICE_INJECTED_PROPS,v=Reflect.getMetadata(c,s)||{},f=v[u]||[],l={key:e,value:void 0===r?t:r};a||e===p.INJECT&&void 0===r&&(l.value=Reflect.getMetadata(p.DESIGN_PROPERTY_TYPE,i,n)),f.push(l),v[u]=f,Reflect.defineMetadata(c,v,s)}}}var d=h(p.INJECT),C=h(p.SELF,!0),R=h(p.SKIP_SELF,!0),O=h(p.OPTIONAL,!0);function P(){return function(e){Reflect.defineMetadata(p.INJECTABLE,!0,e);var t=Reflect.getMetadata(p.DESIGN_PARAM_TYPES,e)||[];return Reflect.defineMetadata(p.SERVICE_PARAM_TYPES,t,e),e}}function T(e,t){return e&&Object.prototype.hasOwnProperty.call(e,t)}function I(e,t){for(var r in t)T(t,r)&&(e[r]=t[r]);return e}function m(e){return e.__forward_ref__=m,e}function S(e){return"function"==typeof e&&T(e,"__forward_ref__")&&e.__forward_ref__===m}function g(e){return S(e)?e():e}var y=function(e){_inherits(r,e);var t=l(r);function r(e,o){var a;_classCallCheck(this,r),a=t.call(this),_defineProperty(_assertThisInitialized(a),"name","CIRCULAR_DEPENDENCY_ERROR"),_defineProperty(_assertThisInitialized(a),"message",a.name);for(var s=[e.provide],u=null==o?void 0:o.provider;u&&u.provide;)s.push(u.provide),u=u.parent;var v=s.join(" <-- ");return a.message="CIRCULAR DEPENDENCY DETECTED. PLEASE FIX IT MANUALLY. \n ".concat(v),a}return r}(wrapNativeSuper_wrapNativeSuper(Error)),N=function(e){_inherits(r,e);var t=l(r);function r(e,o,a,s){var u;return _classCallCheck(this,r),u=t.call(this),_defineProperty(_assertThisInitialized(u),"name","INJECT_FAILED_ERROR"),_defineProperty(_assertThisInitialized(u),"message",u.name),s?e&&e.value===Object?u.message="CAN NOT USE OBJECT AS INJECTION TOKEN. PARAMETER ".concat(a," OF CLASS ").concat(o,"."):s===Object&&(u.message="CONSTRUCTOR PARAMETER TYPE IS OBJECT OR INTERFACE, MUST USE @INJECT TO SPECIFY INJECTION TOKEN. PARAMETER ".concat(a," OF CLASS ").concat(o,".")):e?e.value===Object&&(u.message="CAN NOT USE OBJECT AS INJECTION TOKEN. PROPERTY ".concat(a," OF CLASS ").concat(o,".")):u.message="INJECT PROPERTY REQUIRE @INJECT() DECORATOR. PROPERTY ".concat(a," OF CLASS ").concat(o,"."),u}return r}(wrapNativeSuper_wrapNativeSuper(Error)),b=function(e){_inherits(r,e);var t=l(r);function r(e){var o;return _classCallCheck(this,r),o=t.call(this),_defineProperty(_assertThisInitialized(o),"name","PROVIDER_NOT_VALID_ERROR"),_defineProperty(_assertThisInitialized(o),"message",o.name),o.message="PROVIDER NOT VALID. ".concat(e),o}return r}(wrapNativeSuper_wrapNativeSuper(Error)),A=function(e){_inherits(r,e);var t=l(r);function r(e){var o;return _classCallCheck(this,r),o=t.call(this),_defineProperty(_assertThisInitialized(o),"name","TOKEN_NOT_FOUND_ERROR"),_defineProperty(_assertThisInitialized(o),"message",o.name),o.message="TOKEN IS NOT A INJECTABLE CLASS OR SKIP OUT OF ROOT INJECTOR. YOU CAN USE @Optional DECORATOR TO IGNORE THIS ERROR IF THIS SERVICE IS OPTIONAL. ".concat(e),o}return r}(wrapNativeSuper_wrapNativeSuper(Error)),_=function(e){return e},k=function(){function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};_classCallCheck(this,n),_defineProperty(this,"parent",void 0),_defineProperty(this,"providerMap",new Map),_defineProperty(this,"beforeCacheHook",void 0),_defineProperty(this,"mergePropertyHook",void 0),this.parent=t,this.beforeCacheHook=r.beforeCacheHook||_,this.mergePropertyHook=r.mergePropertyHook||I,this.addProviders(e)}return _createClass(n,[{key:"get",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(t.skip){if(this.parent)return this.parent.get(e,f(f({},t),{},{skip:!1}));if(!t.optional)throw new A(e)}else if(t.self){if(this.providerMap.has(e)){var r=this.providerMap.get(e);if(r.status===E.INITING)throw new y(r,t);return this.getServiceByProvider(r,t)}if(!this.parent&&"function"==typeof e&&Reflect.getMetadata(p.INJECTABLE,e)){var i=this.getProviderByToken(e);return this.getServiceByProvider(i,t)}if(!t.optional)throw new A(e)}else{if(this.providerMap.has(e)){var n=this.providerMap.get(e);if(n.status===E.INITING)throw new y(n,t);return this.getServiceByProvider(n,t)}if(this.parent)return this.parent.get(e,t);if("function"==typeof e&&Reflect.getMetadata(p.INJECTABLE,e)){var o=this.getProviderByToken(e);return this.getServiceByProvider(o,t)}if(!t.optional)throw new A(e)}}},{key:"getProviderByToken",value:function(e){return this.providerMap.has(e)||this.addProvider(e),this.providerMap.get(e)}},{key:"getServiceByProvider",value:function(e,t){if("useCacheValue"in e)return e.useCacheValue;if("useValue"in e)return this.getServiceUseValueWithProvider(e);if(e.useClass)return this.getServiceUseClassWithProvider(e,t);if(e.useExisting)return this.getServiceUseExistingWithProvider(e,t);if(e.useFactory)return this.getServiceUseFactoryWithProvider(e,t);throw new b(e)}},{key:"getServiceUseValueWithProvider",value:function(e){var t=this.beforeCacheHook(e.useValue);return e.useCacheValue=t,t}},{key:"getServiceUseClassWithProvider",value:function(r,i){r.parent=i.provider,r.status=E.INITING;var n=r.useClass,o=this.getContructorParameters(n,r),a=this.beforeCacheHook(construct_construct(n,_toConsumableArray(o)));r.useCacheValue=a,r.status=E.CONSTRUCTED;var s=this.getInjectProperties(n,r);return this.mergePropertyHook(a,s),r.status=E.MERGED,r.parent=void 0,a}},{key:"getServiceUseExistingWithProvider",value:function(e,t){e.parent=t.provider,e.status=E.INITING;var r=this.get(e.useExisting,f(f({},t),{},{provider:e}));return e.useCacheValue=r,e.status=E.CONSTRUCTED,e.parent=void 0,r}},{key:"getServiceUseFactoryWithProvider",value:function(e,r){var i=this;e.parent=r.provider,e.status=E.INITING;var n=(e.deps||[]).map((function(t){return i.get(t,{provider:e})})),o=e.useFactory.apply(e,_toConsumableArray(n)),a=this.beforeCacheHook(o);return e.useCacheValue=a,e.status=E.CONSTRUCTED,e.parent=void 0,a}},{key:"getContructorParameters",value:function(e,t){var r=this;return this.getContructorParametersMetas(e).map((function(e){return r.get(e.key,f(f({},e.value),{},{provider:t}))}))}},{key:"getContructorParametersMetas",value:function(e){var t=Reflect.getMetadata(p.SERVICE_PARAM_TYPES,e)||[],r=Reflect.getMetadata(p.SERVICE_INJECTED_PARAMS,e)||{};return t.map((function(t,i){var n=r[i]||[],o=n.find((function(e){return e.key===p.INJECT}));if(o&&o.value===Object||!o&&t===Object)throw new N(o,e,i,t);var a=n.reduce((function(e,t){return t.key!==p.INJECT&&(e[t.key]=t.value),e}),{});return{key:g(o&&o.value)||t,value:a}}))}},{key:"getInjectProperties",value:function(e,t){var r=this,i=this.getInjectPropertiesMetas(e),n={};return i.forEach((function(e){var i,o=r.get(e.provide,f(f({},e.value),{},{provider:t}));void 0===o&&null!==(i=e.value)&&void 0!==i&&i.optional||(n[e.key]=o)})),n}},{key:"getInjectPropertiesMetas",value:function(e){var t=Reflect.getMetadata(p.SERVICE_INJECTED_PROPS,e)||{},r=[];for(var i in t)if(T(t,i)){var n=t[i],o=n.find((function(e){return e.key===p.INJECT}));if(!o||o.value===Object)throw new N(o,e,i);var a=n.reduce((function(e,t){return t.key!==p.INJECT&&(e[t.key]=t.value),e}),{});r.push({key:i,provide:g(o.value),value:a})}return r}},{key:"addProviders",value:function(e){var t=this;e.forEach((function(e){t.addProvider(e)}))}},{key:"addProvider",value:function(e){e.provide?this.providerMap.set(e.provide,e):this.providerMap.set(e,{provide:e,useClass:e})}},{key:"dispose",value:function(){this.providerMap.forEach((function(e){if(e&&e.useCacheValue&&e.useCacheValue.dispose)try{e.useCacheValue.dispose()}catch(t){console.error(t)}})),this.providerMap=null,this.parent=null}}]),n}();
+ */();return function(){var r,i=_getPrototypeOf(e);if(t){var n=_getPrototypeOf(this).constructor;r=Reflect.construct(i,arguments,n)}else r=i.apply(this,arguments);return _possibleConstructorReturn(this,r)}}var p={DESIGN_PROPERTY_TYPE:"design:type",DESIGN_PARAM_TYPES:"design:paramtypes",SERVICE_PARAM_TYPES:"service:paramtypes",SERVICE_INJECTED_PARAMS:"service:injected:params",SERVICE_INJECTED_PROPS:"service:injected:props",INJECT:Symbol("inject"),INJECTABLE:Symbol("injectable"),SELF:"self",SKIP_SELF:"skip",OPTIONAL:"optional"},E={INITING:Symbol("initing"),CONSTRUCTED:Symbol("constructed"),MERGED:Symbol("merged")};function h(e,t){return function(r){return function(i,n,o){var a="number"==typeof o,s=a?i:i.constructor,u=a?o:n,c=a?p.SERVICE_INJECTED_PARAMS:p.SERVICE_INJECTED_PROPS,v=Reflect.getMetadata(c,s)||{},f=v[u]||[],l={key:e,value:void 0===r?t:r};a||e===p.INJECT&&void 0===r&&(l.value=Reflect.getMetadata(p.DESIGN_PROPERTY_TYPE,i,n)),f.push(l),v[u]=f,Reflect.defineMetadata(c,v,s)}}}var d=h(p.INJECT),C=h(p.SELF,!0),R=h(p.SKIP_SELF,!0),O=h(p.OPTIONAL,!0);function P(){return function(e){Reflect.defineMetadata(p.INJECTABLE,!0,e);var t=Reflect.getMetadata(p.DESIGN_PARAM_TYPES,e)||[];return Reflect.defineMetadata(p.SERVICE_PARAM_TYPES,t,e),e}}function T(e,t){return e&&Object.prototype.hasOwnProperty.call(e,t)}function I(e,t){for(var r in t)T(t,r)&&(e[r]=t[r]);return e}function m(e){return e.__forward_ref__=m,e}function S(e){return"function"==typeof e&&T(e,"__forward_ref__")&&e.__forward_ref__===m}function g(e){return S(e)?e():e}var y=function(e){_inherits(r,e);var t=l(r);function r(e,o){var a;_classCallCheck(this,r),a=t.call(this),_defineProperty(_assertThisInitialized(a),"name","CIRCULAR_DEPENDENCY_ERROR"),_defineProperty(_assertThisInitialized(a),"message",a.name);for(var s=[e.provide],u=null==o?void 0:o.provider;u&&u.provide;)s.push(u.provide),u=u.parent;var v=s.join(" <-- ");return a.message="CIRCULAR DEPENDENCY DETECTED. PLEASE FIX IT MANUALLY. \n ".concat(v),a}return r}(_wrapNativeSuper(Error)),N=function(e){_inherits(r,e);var t=l(r);function r(e,o,a,s){var u;return _classCallCheck(this,r),u=t.call(this),_defineProperty(_assertThisInitialized(u),"name","INJECT_FAILED_ERROR"),_defineProperty(_assertThisInitialized(u),"message",u.name),s?e&&e.value===Object?u.message="CAN NOT USE OBJECT AS INJECTION TOKEN. PARAMETER ".concat(a," OF CLASS ").concat(o,"."):s===Object&&(u.message="CONSTRUCTOR PARAMETER TYPE IS OBJECT OR INTERFACE, MUST USE @INJECT TO SPECIFY INJECTION TOKEN. PARAMETER ".concat(a," OF CLASS ").concat(o,".")):e?e.value===Object&&(u.message="CAN NOT USE OBJECT AS INJECTION TOKEN. PROPERTY ".concat(a," OF CLASS ").concat(o,".")):u.message="INJECT PROPERTY REQUIRE @INJECT() DECORATOR. PROPERTY ".concat(a," OF CLASS ").concat(o,"."),u}return r}(_wrapNativeSuper(Error)),b=function(e){_inherits(r,e);var t=l(r);function r(e){var o;return _classCallCheck(this,r),o=t.call(this),_defineProperty(_assertThisInitialized(o),"name","PROVIDER_NOT_VALID_ERROR"),_defineProperty(_assertThisInitialized(o),"message",o.name),o.message="PROVIDER NOT VALID. ".concat(e),o}return r}(_wrapNativeSuper(Error)),A=function(e){_inherits(r,e);var t=l(r);function r(e){var o;return _classCallCheck(this,r),o=t.call(this),_defineProperty(_assertThisInitialized(o),"name","TOKEN_NOT_FOUND_ERROR"),_defineProperty(_assertThisInitialized(o),"message",o.name),o.message="TOKEN IS NOT A INJECTABLE CLASS OR SKIP OUT OF ROOT INJECTOR. YOU CAN USE @Optional DECORATOR TO IGNORE THIS ERROR IF THIS SERVICE IS OPTIONAL. ".concat(e),o}return r}(_wrapNativeSuper(Error)),_=function(e){return e},k=function(){function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};_classCallCheck(this,n),_defineProperty(this,"parent",void 0),_defineProperty(this,"providerMap",new Map),_defineProperty(this,"beforeCacheHook",void 0),_defineProperty(this,"mergePropertyHook",void 0),this.parent=t,this.beforeCacheHook=r.beforeCacheHook||_,this.mergePropertyHook=r.mergePropertyHook||I,this.addProviders(e)}return _createClass(n,[{key:"get",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(t.skip){if(this.parent)return this.parent.get(e,f(f({},t),{},{skip:!1}));if(!t.optional)throw new A(e)}else if(t.self){if(this.providerMap.has(e)){var r=this.providerMap.get(e);if(r.status===E.INITING)throw new y(r,t);return this.getServiceByProvider(r,t)}if(!this.parent&&"function"==typeof e&&Reflect.getMetadata(p.INJECTABLE,e)){var i=this.getProviderByToken(e);return this.getServiceByProvider(i,t)}if(!t.optional)throw new A(e)}else{if(this.providerMap.has(e)){var n=this.providerMap.get(e);if(n.status===E.INITING)throw new y(n,t);return this.getServiceByProvider(n,t)}if(this.parent)return this.parent.get(e,t);if("function"==typeof e&&Reflect.getMetadata(p.INJECTABLE,e)){var o=this.getProviderByToken(e);return this.getServiceByProvider(o,t)}if(!t.optional)throw new A(e)}}},{key:"getProviderByToken",value:function(e){return this.providerMap.has(e)||this.addProvider(e),this.providerMap.get(e)}},{key:"getServiceByProvider",value:function(e,t){if("useCacheValue"in e)return e.useCacheValue;if("useValue"in e)return this.getServiceUseValueWithProvider(e);if(e.useClass)return this.getServiceUseClassWithProvider(e,t);if(e.useExisting)return this.getServiceUseExistingWithProvider(e,t);if(e.useFactory)return this.getServiceUseFactoryWithProvider(e,t);throw new b(e)}},{key:"getServiceUseValueWithProvider",value:function(e){var t=this.beforeCacheHook(e.useValue);return e.useCacheValue=t,t}},{key:"getServiceUseClassWithProvider",value:function(r,i){r.parent=i.provider,r.status=E.INITING;var n=r.useClass,o=this.getContructorParameters(n,r),a=this.beforeCacheHook(_construct(n,_toConsumableArray(o)));r.useCacheValue=a,r.status=E.CONSTRUCTED;var s=this.getInjectProperties(n,r);return this.mergePropertyHook(a,s),r.status=E.MERGED,r.parent=void 0,a}},{key:"getServiceUseExistingWithProvider",value:function(e,t){e.parent=t.provider,e.status=E.INITING;var r=this.get(e.useExisting,f(f({},t),{},{provider:e}));return e.useCacheValue=r,e.status=E.CONSTRUCTED,e.parent=void 0,r}},{key:"getServiceUseFactoryWithProvider",value:function(e,r){var i=this;e.parent=r.provider,e.status=E.INITING;var n=(e.deps||[]).map((function(t){return i.get(t,{provider:e})})),o=e.useFactory.apply(e,_toConsumableArray(n)),a=this.beforeCacheHook(o);return e.useCacheValue=a,e.status=E.CONSTRUCTED,e.parent=void 0,a}},{key:"getContructorParameters",value:function(e,t){var r=this;return this.getContructorParametersMetas(e).map((function(e){return r.get(e.key,f(f({},e.value),{},{provider:t}))}))}},{key:"getContructorParametersMetas",value:function(e){var t=Reflect.getMetadata(p.SERVICE_PARAM_TYPES,e)||[],r=Reflect.getMetadata(p.SERVICE_INJECTED_PARAMS,e)||{};return t.map((function(t,i){var n=r[i]||[],o=n.find((function(e){return e.key===p.INJECT}));if(o&&o.value===Object||!o&&t===Object)throw new N(o,e,i,t);var a=n.reduce((function(e,t){return t.key!==p.INJECT&&(e[t.key]=t.value),e}),{});return{key:g(o&&o.value)||t,value:a}}))}},{key:"getInjectProperties",value:function(e,t){var r=this,i=this.getInjectPropertiesMetas(e),n={};return i.forEach((function(e){var i,o=r.get(e.provide,f(f({},e.value),{},{provider:t}));void 0===o&&null!==(i=e.value)&&void 0!==i&&i.optional||(n[e.key]=o)})),n}},{key:"getInjectPropertiesMetas",value:function(e){var t=Reflect.getMetadata(p.SERVICE_INJECTED_PROPS,e)||{},r=[];for(var i in t)if(T(t,i)){var n=t[i],o=n.find((function(e){return e.key===p.INJECT}));if(!o||o.value===Object)throw new N(o,e,i);var a=n.reduce((function(e,t){return t.key!==p.INJECT&&(e[t.key]=t.value),e}),{});r.push({key:i,provide:g(o.value),value:a})}return r}},{key:"addProviders",value:function(e){var t=this;e.forEach((function(e){t.addProvider(e)}))}},{key:"addProvider",value:function(e){e.provide?this.providerMap.set(e.provide,e):this.providerMap.set(e,{provide:e,useClass:e})}},{key:"dispose",value:function(){this.providerMap.forEach((function(e){if(e&&e.useCacheValue&&e.useCacheValue.dispose)try{e.useCacheValue.dispose()}catch(t){console.error(t)}})),this.providerMap=null,this.parent=null}}]),n}();
 //# sourceMappingURL=index.esm.runtime.min.js.map
 
-// CONCATENATED MODULE: ./src/B.ts
-function B_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function B_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function B_createClass(Constructor, protoProps, staticProps) { if (protoProps) B_defineProperties(Constructor.prototype, protoProps); if (staticProps) B_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
+;// CONCATENATED MODULE: ./src/B.ts
 function B_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function B_typeof(obj) { "@babel/helpers - typeof"; return B_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, B_typeof(obj); }
 
 var __decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
       r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
       d;
-  if ((typeof Reflect === "undefined" ? "undefined" : B_typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
 var __metadata = undefined && undefined.__metadata || function (k, v) {
-  if ((typeof Reflect === "undefined" ? "undefined" : B_typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
 
-
-var B = /*#__PURE__*/function () {
-  function B() {
-    B_classCallCheck(this, B);
-
+let B = class B {
+  constructor() {
     B_defineProperty(this, "a", void 0);
   }
 
-  B_createClass(B, [{
-    key: "logB",
-    value: function logB(msg) {
-      console.log("from logB => ", msg);
-    }
-  }]);
+  logB(msg) {
+    console.log("from logB => ", msg);
+  }
 
-  return B;
-}();
+};
 
-__decorate([d(m(function () {
-  return A_A;
-})), __metadata("design:type", A_A)], B.prototype, "a", void 0);
+__decorate([d(m(() => A_A)), __metadata("design:type", A_A)], B.prototype, "a", void 0);
 
 B = __decorate([P()], B);
 
-// CONCATENATED MODULE: ./src/A.ts
-function A_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function A_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function A_createClass(Constructor, protoProps, staticProps) { if (protoProps) A_defineProperties(Constructor.prototype, protoProps); if (staticProps) A_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
+;// CONCATENATED MODULE: ./src/A.ts
 function A_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function A_typeof(obj) { "@babel/helpers - typeof"; return A_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, A_typeof(obj); }
 
 var A_decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
       r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
       d;
-  if ((typeof Reflect === "undefined" ? "undefined" : A_typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
 var A_metadata = undefined && undefined.__metadata || function (k, v) {
-  if ((typeof Reflect === "undefined" ? "undefined" : A_typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
 
-
-var A_A = /*#__PURE__*/function () {
-  function A() {
-    A_classCallCheck(this, A);
-
+let A_A = class A {
+  constructor() {
     A_defineProperty(this, "b", void 0);
   }
 
-  A_createClass(A, [{
-    key: "logA",
-    value: function logA(msg) {
-      console.log("from logA => ", msg);
-    }
-  }]);
+  logA(msg) {
+    console.log("from logA => ", msg);
+  }
 
-  return A;
-}();
+};
 
-A_decorate([d(m(function () {
-  return B;
-})), A_metadata("design:type", B)], A_A.prototype, "b", void 0);
+A_decorate([d(m(() => B)), A_metadata("design:type", B)], A_A.prototype, "b", void 0);
 
 A_A = A_decorate([P()], A_A);
 
-// CONCATENATED MODULE: ./src/index.ts
-function src_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function src_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function src_createClass(Constructor, protoProps, staticProps) { if (protoProps) src_defineProperties(Constructor.prototype, protoProps); if (staticProps) src_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-
+;// CONCATENATED MODULE: ./src/index.ts
 function src_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function src_typeof(obj) { "@babel/helpers - typeof"; return src_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, src_typeof(obj); }
 
 var src_decorate = undefined && undefined.__decorate || function (decorators, target, key, desc) {
   var c = arguments.length,
       r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
       d;
-  if ((typeof Reflect === "undefined" ? "undefined" : src_typeof(Reflect)) === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) {
-    if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-  }
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
   return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
 var src_metadata = undefined && undefined.__metadata || function (k, v) {
-  if ((typeof Reflect === "undefined" ? "undefined" : src_typeof(Reflect)) === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
 
 
 
-
-var MyMath = /*#__PURE__*/function () {
-  function MyMath() {
-    src_classCallCheck(this, MyMath);
-
+let MyMath = class MyMath {
+  constructor() {
     src_defineProperty(this, "a", void 0);
 
     src_defineProperty(this, "b", void 0);
   }
 
-  src_createClass(MyMath, [{
-    key: "add",
-    value: function add(a, b) {
-      var sum = a + b;
-      this.a.logA(sum);
-      this.b.logB(sum);
-      return a + b;
-    }
-  }]);
+  add(a, b) {
+    const sum = a + b;
+    this.a.logA(sum);
+    this.b.logB(sum);
+    return a + b;
+  }
 
-  return MyMath;
-}();
+};
 
 src_decorate([d(A_A), src_metadata("design:type", A_A)], MyMath.prototype, "a", void 0);
 
 src_decorate([d(B), src_metadata("design:type", B)], MyMath.prototype, "b", void 0);
 
 MyMath = src_decorate([P()], MyMath);
-var injector = new k();
-var myMath = injector.get(MyMath);
-var sum = myMath.add(1, 2);
+const injector = new k();
+const myMath = injector.get(MyMath);
+const sum = myMath.add(1, 2);
 console.log("sum => ", sum);
-
-/***/ })
-/******/ ]);
+}();
+/******/ })()
+;
