@@ -1,7 +1,7 @@
 ## 只使用 ts-loader
 
-| only ts-loader | es5                | es6                                         | esnext                                      |
-| -------------- | ------------------ | ------------------------------------------- | ------------------------------------------- |
+| only ts-loader | es5                | es6               | esnext            |
+| -------------- | ------------------ | ----------------- | ----------------- |
 | webpack4       | :white_check_mark: | :x: runtime error | :x: build error   |
 | webpack5       | :white_check_mark: | :x: runtime error | :x: runtime error |
 
@@ -14,10 +14,10 @@
 
 ## 使用 ts-loader 和 babel-loader 和 .browserslistrc
 
-| ts-loader + babel-loader + .browserslistrc | es5                | es6                                         | esnext                                      |
-| ------------------------------------------ | ------------------ | ------------------------------------------- | ------------------------------------------- |
-| webpack4                                   | :white_check_mark: | :negative_squared_cross_mark: runtime error | :negative_squared_cross_mark: runtime error |
-| webpack5                                   | :white_check_mark: | :negative_squared_cross_mark: runtime error | :negative_squared_cross_mark: runtime error |
+| ts-loader + babel-loader + .browserslistrc | es5                | es6               | esnext            |
+| ------------------------------------------ | ------------------ | ----------------- | ----------------- |
+| webpack4                                   | :white_check_mark: | :x: runtime error | :x: runtime error |
+| webpack5                                   | :white_check_mark: | :x: runtime error | :x: runtime error |
 
 ## 总结
 
