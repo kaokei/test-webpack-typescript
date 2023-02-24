@@ -2,8 +2,8 @@
 
 | only ts-loader | es5                | es6                                         | esnext                                      |
 | -------------- | ------------------ | ------------------------------------------- | ------------------------------------------- |
-| webpack4       | :white_check_mark: | :negative_squared_cross_mark: runtime error | :negative_squared_cross_mark: build error   |
-| webpack5       | :white_check_mark: | :negative_squared_cross_mark: runtime error | :negative_squared_cross_mark: runtime error |
+| webpack4       | :white_check_mark: | :x: runtime error | :x: build error   |
+| webpack5       | :white_check_mark: | :x: runtime error | :x: runtime error |
 
 ## 使用 ts-loader 和 babel-loader
 
